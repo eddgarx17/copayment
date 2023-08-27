@@ -1,0 +1,209 @@
+{
+	"info": {
+		"_postman_id": "c4e262c4-47bf-46e6-853a-8818f671a276",
+		"name": "Copayment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12794055",
+		"_collection_link": "https://lively-firefly-524272.postman.co/workspace/Copayment~a656efff-1580-4db7-9780-d9a5aeb08f7a/collection/12794055-c4e262c4-47bf-46e6-853a-8818f671a276?action=share&creator=12794055&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8000/employee/getEmployee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/employee/getEmployee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"employee",
+						"getEmployee"
+					]
+				},
+				"description": "Obtiene el listado de todos los empleados registrados."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/employee/saveEmployee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Regina Marcela\",\r\n    \"apellido_paterno\":\"Almazan\",\r\n    \"apellido_materno\":\"Cruz\",\r\n    \"departamento\":\"Infraestructura\",\r\n    \"pago_por_hora\" : 510.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/employee/saveEmployee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"employee",
+						"saveEmployee"
+					]
+				},
+				"description": "Agrega un nuevo registro de empleado.\n\nLos departamentos permitidos son los siguientes:\n\n'Desarrollo', 'Infraestructura', 'Proyectos', 'Operaciones'"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/employee/updateEmployee/8",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Edgar\",\r\n    \"apellido_paterno\":\"Martinez\",\r\n    \"apellido_materno\":\"Osorio\",\r\n    \"departamento\":\"Desarrollo\",\r\n    \"pago_por_hora\": 620\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/employee/updateEmployee/8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"employee",
+						"updateEmployee",
+						"8"
+					]
+				},
+				"description": "Actualiza la informacion del empleado, para actualizar la informacion se debe enviar el id del empleado a actualizar."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/employee/deleteEmployee/16",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/employee/deleteEmployee/16",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"employee",
+						"deleteEmployee",
+						"16"
+					]
+				},
+				"description": "Elimina el registro de un empleado, para eliminar es necesario enviar en id del empleado."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/employee/getEmployee/15",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/employee/getEmployee/15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"employee",
+						"getEmployee",
+						"15"
+					]
+				},
+				"description": "Obtiene los datos de un empleado en espefico enviando su ID de empleado."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/employeeLog/LogEntry",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"tipo_registro\": \"salida\", // Entrada\r\n    \"empleado\": {\r\n        \"id_empleado\": 8\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/employeeLog/LogEntry",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"employeeLog",
+						"LogEntry"
+					]
+				},
+				"description": "Agrega un nuevo registro de entrada o salida,\n\nel atributo tipo_registro solo acepta 2 valores 'entrada' o 'salida'"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/employeeLog/getLogEntry",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/employeeLog/getLogEntry",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"employeeLog",
+						"getLogEntry"
+					]
+				},
+				"description": "Obtiene un listado de todos los registros den entradas y salidas de los empleados."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/employeeSalary/getSalary",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/employeeSalary/getSalary",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"employeeSalary",
+						"getSalary"
+					]
+				},
+				"description": "Consulta el salario de los empleados por horas trabajadas y por media de pago por hora por departamento."
+			},
+			"response": []
+		}
+	]
+}
